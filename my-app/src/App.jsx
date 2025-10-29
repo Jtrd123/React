@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <h1>จำนวนประชากร {data.length} คน</h1>
-      <button onClick={() => setShow(!show)}>swap</button>
+      <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button>
       <ul>
-        {data.map((item) => (
+        {show && data.map((item) => (
           <li key={item.id}>
             <h3>{item.id} {item.name} | {item.gender}</h3>
           </li>
