@@ -1,6 +1,11 @@
+import "./Header.css"
+
 const Header = () => {
   return (
-    <h1>My App</h1>
+    <nav>
+      <h1>My App</h1>
+      <button>Light / Dark</button>
+    </nav>
   )
 }
 
