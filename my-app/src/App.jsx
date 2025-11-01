@@ -10,13 +10,17 @@ function App() {
       { id: 3, name: "New", gender: "male" },
       { id: 4, name: "Toy", gender: "female" }
     ]);
+
+    function deleteUser(id) {
+      const result = data.filter((user) => user.id !== id) //new array
+      setData(result)
+    }
   return (
     <>
-      
       <div className="app">
       <Header title="แอพจัดการข้อมูลประชากร"/>
       <main>
-        <PersonList data={data}/>
+        <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       </div>
     </>

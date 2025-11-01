@@ -1,7 +1,7 @@
 import boy from "../assets/boy.png";
 import girl from "../assets/woman.png";
 
-export default function User({ item }) {
+export default function User({ item, deleteUser }) {
   return (
     <>
     <li style={{borderStyle: "solid", borderColor: item.gender == "male" ? "green" : "pink" }}>
@@ -12,7 +12,7 @@ export default function User({ item }) {
               />
               <p>{item.name}</p>
               <div className="control">
-                <button>ลบ</button>
+                <button onClick={() => deleteUser(item.id)}>ลบ</button>
               </div>
             </li>
     </>
