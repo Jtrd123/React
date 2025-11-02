@@ -2,7 +2,7 @@ import Header from "./component/Header.jsx"
 import PersonList from "./component/Personlist.jsx"
 import AddForm from "./component/AddForm.jsx"
 import './App.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function App() {
   const [data, setData] = useState([
@@ -17,6 +17,9 @@ function App() {
       setData(result)
     }
 
+  useEffect(() => {
+    console.log("Render Component")
+  },[data])
   return (
     <>
       <div className="app">
