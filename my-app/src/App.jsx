@@ -1,5 +1,6 @@
 import Header from "./component/Header.jsx"
 import PersonList from "./component/Personlist.jsx"
+import AddForm from "./component/AddForm.jsx"
 import './App.css'
 import { useState } from "react"
 
@@ -18,8 +19,9 @@ function App() {
   return (
     <>
       <div className="app">
-      <Header title="แอพจัดการข้อมูลประชากร"/>
+        <Header title="แอพจัดการข้อมูลประชากร"/>
       <main>
+        <AddForm />
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       </div>
