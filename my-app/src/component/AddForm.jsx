@@ -1,13 +1,23 @@
 import "./AddForm.css"
 import { useState } from "react"
 
-export default function AddForm() {
+export default function AddForm(props) {
   const [name, setName] = useState("")
-  const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("male")
+
+  const {data, setData} = props
 
   function saveData(e) {
     e.preventDefault()
-    console.log( name, gender )
+    const person={
+      id:Math.floor(Math.random()*1000),
+      name:name,
+      gender:gender
+    }
+    console.log(person)
+    setData([...data, person])
+    setName("")
+    setGender("male")
   }
   return (
     <section className="container">
@@ -18,7 +28,7 @@ export default function AddForm() {
           <option>male</option>
           <option>female</option>
         </select>
-        <button className="btn-save" type="submit">Save</button>
+        <button className="btn-save" type="submit" disabled={name.trim() === "" }>Save</button>
       </form>
     </section>
   );

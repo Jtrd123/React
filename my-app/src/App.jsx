@@ -16,12 +16,13 @@ function App() {
       const result = data.filter((user) => user.id !== id) //new array
       setData(result)
     }
+
   return (
     <>
       <div className="app">
         <Header title="แอพจัดการข้อมูลประชากร"/>
       <main>
-        <AddForm />
+        <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       </div>
