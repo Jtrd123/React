@@ -12,6 +12,8 @@ function App() {
       { id: 4, name: "Toy", gender: "female" }
     ]);
 
+    const [theme, setTheme] = useState("light")
+
     function deleteUser(id) {
       const result = data.filter((user) => user.id !== id) //new array
       setData(result)
@@ -21,15 +23,15 @@ function App() {
     console.log("Render Component")
   },[data])
   return (
-    <>
+    <div className={theme}>
       <div className="app">
-        <Header title="แอพจัดการข้อมูลประชากร"/>
+        <Header title="แอพจัดการข้อมูลประชากร" theme={theme} setTheme={setTheme}/>
       <main>
         <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       </div>
-    </>
+    </div>
   )
 }
 

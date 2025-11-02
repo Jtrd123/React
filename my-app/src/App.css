@@ -9,3 +9,13 @@ main {
   margin: auto;
   padding: 10px;
 }
+
+.light {
+  background-color: white;
+  color: #15202b;
+}
+
+.dark {
+  background-color: #15202b;
+  color: white;
+}
