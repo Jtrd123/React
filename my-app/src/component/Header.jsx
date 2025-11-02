@@ -1,4 +1,6 @@
 import "./Header.css";
+import { MdWbSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
 
 const Header = ({ title, theme, setTheme }) => {
   function toggleTheme() {
@@ -12,7 +14,9 @@ const Header = ({ title, theme, setTheme }) => {
   return (
     <nav>
       <h1>{title}</h1>
-      <button onClick={toggleTheme}>Theme: {theme}</button>
+      <span onClick={toggleTheme}>
+        {theme === "light" ? <MdWbSunny size={30} /> : <FaMoon size={30} />}
+      </span>
     </nav>
   );
 };

@@ -9,3 +9,7 @@ nav {
   font-size: 20px;
   border-bottom: 1px solid #ccc;
 }
+
+span {
+  cursor: pointer;
+}
